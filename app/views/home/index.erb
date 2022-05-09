@@ -1,5 +1,6 @@
-<!-- 왜 이 파일을 만들었냐, 액션 이름을 index 라고 했기 때문에 똑같은 이름을 파일에 넣어야 둘이 연결이 된다.
-# 그래야 둘이 같이 연결되어있따고 생각을 하게 됨.
-# router 안에, "컨트롤러 이름" 하고 "액션 이름"을 적어서 url에 연결을 해줘야 한다. e.g) get"/" => "home#index" home 은 컴포넌트 이름이고, index는 액션 이름이었음
--->
-Hello world
+<% @posts.each do |post| %>
+제목: <%=post.title%> <a href="/modify/<%=post.id%>">수정하기</a><br>
+내용: <%=post.content%> <a href="/delete/<%=post.id%>">삭제하기</a><hr>
+<% end %>
+<br>
+<a href="/write">글쓰러가기</a>
